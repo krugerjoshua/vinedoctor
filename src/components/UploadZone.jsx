@@ -88,7 +88,7 @@ export default function UploadZone() {
             <h1 style={{ fontSize: 24, marginBottom: 8 }}>🍇 VineDoctor</h1>
             <p style={{ color: "#666", marginBottom: 24 }}>
                 Take a photo of a sick vine. Get an instant diagnosis.<br />
-                Please take screenshot of any errors and send to joshua.
+                Please take screenshot of any errors and send to Joshua.
             </p>
 
             {/* Show the dropzone only if no photo has been selected yet */}
