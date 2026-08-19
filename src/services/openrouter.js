@@ -6,10 +6,16 @@ export async function diagnoseImage(base64Image, mimeType) {
   console.log("Base64 length:", base64Image.length);
   console.log("API key exists:", !!import.meta.env.VITE_OPENROUTER_API_KEY);
   console.log("Current origin:", window.location.origin);
+
+  console.log("Current origin:", window.location.origin);
+
+  console.log("About to send request to OpenRouter");
+  console.log(
+    "Model:",
+    "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free"
+  );
+  console.log("Referer:", window.location.origin);
   const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
-    console.log("About to send request to OpenRouter");
-    console.log("Model:", "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free");
-    console.log("Referer:", window.location.origin);
     method: "POST",
     headers: {
       "Authorization": `Bearer ${apiKey}`,
@@ -60,7 +66,9 @@ Analyze this photo and respond ONLY with valid JSON, no markdown, no backticks:
   console.log("Response status:", response.status);
   console.log("Response OK:", response.ok);
   console.log("Response URL:", response.url);
+  
   const data = await response.json();
+  
   console.log("Raw response:", JSON.stringify(data, null, 2));
 
   console.log("JSON parsing completed");
