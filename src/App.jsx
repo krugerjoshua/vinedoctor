@@ -6,8 +6,7 @@ import Disclaimer from './components/Disclaimer';
 
 export default function App() {
     const { status } = useSelector((state) => state.diagnosis);
-    const accepted = localStorage.getItem('vd_accepted');
-    const [showDisclaimer, setShowDisclaimer] = useState(!accepted);
+    const [showDisclaimer, setShowDisclaimer] = useState(true);
     if (showDisclaimer) {
     return (
       <Disclaimer onAccept={() => {
