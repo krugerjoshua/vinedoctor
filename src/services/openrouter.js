@@ -12,6 +12,7 @@ export async function diagnoseImage(base64Image, mimeType) {
     "Model:",
     "google/gemma-4-26b-a4b-it:free"
   );
+  
   console.log("Referer:", window.location.origin);
   const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
     method: "POST",
