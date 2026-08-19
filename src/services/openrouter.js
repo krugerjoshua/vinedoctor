@@ -1,7 +1,15 @@
 const apiKey = import.meta.env.VITE_OPENROUTER_API_KEY;
 
 export async function diagnoseImage(base64Image, mimeType) {
+  console.log("=== VineDoctor diagnosis started ===");
+  console.log("Image MIME type:", mimeType);
+  console.log("Base64 length:", base64Image.length);
+  console.log("API key exists:", !!import.meta.env.VITE_OPENROUTER_API_KEY);
+  console.log("Current origin:", window.location.origin);
   const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+    console.log("About to send request to OpenRouter");
+    console.log("Model:", "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free");
+    console.log("Referer:", window.location.origin);
     method: "POST",
     headers: {
       "Authorization": `Bearer ${apiKey}`,
@@ -16,8 +24,6 @@ export async function diagnoseImage(base64Image, mimeType) {
           role: "user",
           content: [
             {
-              // Some models want a full data URL, others want raw base64
-              // Gemma wants the full data URL format like this
               type: "image_url",
               image_url: {
                 url: `data:${mimeType};base64,${base64Image}`,
@@ -50,9 +56,15 @@ Analyze this photo and respond ONLY with valid JSON, no markdown, no backticks:
     }),
   });
 
+  console.log("OpenRouter fetch completed");
   console.log("Response status:", response.status);
+  console.log("Response OK:", response.ok);
+  console.log("Response URL:", response.url);
   const data = await response.json();
   console.log("Raw response:", JSON.stringify(data, null, 2));
+
+  console.log("JSON parsing completed");
+  console.log("Raw response:", data);
 
   if (!data.choices || !data.choices[0]) {
     throw new Error(data.error?.message || "No response from model");
