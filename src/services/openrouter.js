@@ -7,8 +7,6 @@ export async function diagnoseImage(base64Image, mimeType) {
   console.log("API key exists:", !!import.meta.env.VITE_OPENROUTER_API_KEY);
   console.log("Current origin:", window.location.origin);
 
-  console.log("Current origin:", window.location.origin);
-
   console.log("About to send request to OpenRouter");
   console.log(
     "Model:",
