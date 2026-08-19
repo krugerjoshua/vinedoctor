@@ -39,7 +39,7 @@ export default function Disclaimer({ onAccept }) {
         <div style={{ padding: '24px' }}>
  
           {/* Diagnosis disclaimer */}
-          <Section icon="🔬" title="For information only">
+          <Section title="For information only">
             VineDoctor uses AI to suggest possible plant conditions based on photos.
             These suggestions are <strong>not professional agricultural advice</strong> and
             should never replace consultation with a registered agronomist or
@@ -48,7 +48,7 @@ export default function Disclaimer({ onAccept }) {
           </Section>
  
           {/* Liability */}
-          <Section icon="⚠️" title="No liability">
+          <Section title="No liability">
             The developers of VineDoctor accept no responsibility for crop loss,
             damage, or financial loss resulting from actions taken based on
             diagnoses provided by this app. Use of this app is entirely at your
@@ -56,7 +56,7 @@ export default function Disclaimer({ onAccept }) {
           </Section>
  
           {/* Photo privacy */}
-          <Section icon="📷" title="Your photos">
+          <Section title="Your photos">
             Photos you upload are sent to a third-party AI service (OpenRouter)
             for analysis. They are <strong>not stored</strong> by VineDoctor and are
             not visible to the app developers. However, the AI service provider
@@ -65,7 +65,7 @@ export default function Disclaimer({ onAccept }) {
           </Section>
  
           {/* Chemical safety */}
-          <Section icon="🧪" title="Chemical safety">
+          <Section title="Chemical safety">
             Any product or chemical recommendations provided are general suggestions
             only. Always read the full product label before use, follow all safety
             precautions, and comply with local agricultural regulations regarding
