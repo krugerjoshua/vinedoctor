@@ -6,7 +6,7 @@ export async function diagnoseImage(base64Image, mimeType) {
     headers: {
       "Authorization": `Bearer ${apiKey}`,
       "Content-Type": "application/json",
-      "HTTP-Referer": "http://localhost:5173",
+      "HTTP-Referer": "https://vinedoctor.netlify.app/",
       "X-Title": "VineDoctor",
     },
     body: JSON.stringify({
