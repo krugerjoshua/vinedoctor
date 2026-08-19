@@ -10,7 +10,7 @@ export async function diagnoseImage(base64Image, mimeType) {
   console.log("About to send request to OpenRouter");
   console.log(
     "Model:",
-    "google/gemma-4-31b-it:free"
+    "google/gemma-4-26b-a4b-it:free"
   );
   console.log("Referer:", window.location.origin);
   const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
@@ -22,7 +22,7 @@ export async function diagnoseImage(base64Image, mimeType) {
       "X-Title": "VineDoctor",
     },
     body: JSON.stringify({
-      model: "google/gemma-4-31b-it:free",
+      model: "google/gemma-4-26b-a4b-it:free",
       messages: [
         {
           role: "user",
