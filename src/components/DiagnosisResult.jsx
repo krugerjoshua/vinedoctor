@@ -88,6 +88,70 @@ export default function DiagnosisResult() {
                 </div>
 
                 {/* Card body */}
+                
+                                {/* Card body */}
+                <div style={{ padding: "20px" }}>
+
+                    {/* Overall summary */}
+                    <p style={{ fontSize: 14, color: "#444", lineHeight: 1.7, marginBottom: 16 }}>
+                        {current.summary}
+                    </p>
+
+                    {/* One card per condition detected */}
+                    {current.conditions?.map((c, i) => {
+                        const condSev = SEVERITY[c.severity] || SEVERITY.medium;
+                        return (
+                            <div key={i} style={{
+                                background: "#F6F4EF",
+                                border: `1px solid ${condSev.border}`,
+                                borderLeft: `3px solid ${condSev.color}`,
+                                borderRadius: 8,
+                                padding: "12px 14px",
+                                marginBottom: 10,
+                            }}>
+                                <div style={{
+                                    display: "flex",
+                                    justifyContent: "space-between",
+                                    alignItems: "center",
+                                    flexWrap: "wrap",
+                                    gap: 6,
+                                    marginBottom: 6,
+                                }}>
+                                    <span style={{ fontWeight: 700, fontSize: 14 }}>
+                                        {c.condition}
+                                    </span>
+                                    <div style={{ display: "flex", gap: 5 }}>
+                                        <span style={{
+                                            fontSize: 10,
+                                            fontWeight: 600,
+                                            background: "#F6F4EF",
+                                            border: "1px solid #D3D1C7",
+                                            color: "#5F5E5A",
+                                            padding: "2px 8px",
+                                            borderRadius: 4,
+                                        }}>
+                                            {c.category}
+                                        </span>
+                                        <span style={{
+                                            fontSize: 10,
+                                            fontWeight: 600,
+                                            background: condSev.bg,
+                                            color: condSev.color,
+                                            border: `1px solid ${condSev.border}`,
+                                            padding: "2px 8px",
+                                            borderRadius: 4,
+                                        }}>
+                                            {condSev.label}
+                                        </span>
+                                    </div>
+                                </div>
+                                <p style={{ fontSize: 13, color: "#555", margin: 0, lineHeight: 1.55 }}>
+                                    {c.description}
+                                </p>
+                            </div>
+                        );
+                    })}
+
                 <div style={{ padding: "20px" }}>
                     {/* Condition name + severity badge */}
                     <div
@@ -99,107 +163,7 @@ export default function DiagnosisResult() {
                             gap: 12,
                             marginBottom: 12,
                         }}
-                    >
-                        <h2
-                            style={{
-                                fontSize: 22,
-                                fontWeight: 700,
-                                margin: 0,
-                                flex: 1,
-                            }}
-                        >
-                            {current.condition}
-                        </h2>
-                        {/* Overall summary */}
-                        <p
-                            style={{
-                                fontSize: 14,
-                                color: "#444",
-                                lineHeight: 1.7,
-                                marginBottom: 16,
-                            }}
-                        >
-                            {current.summary}
-                        </p>
-
-                        {/* One card per condition detected */}
-                        {current.conditions?.map((c, i) => {
-                            const condSev =
-                                SEVERITY[c.severity] || SEVERITY.medium;
-                            return (
-                                <div
-                                    key={i}
-                                    style={{
-                                        background: "#F6F4EF",
-                                        border: `1px solid ${condSev.border}`,
-                                        borderLeft: `3px solid ${condSev.color}`,
-                                        borderRadius: 8,
-                                        padding: "12px 14px",
-                                        marginBottom: 10,
-                                    }}
-                                >
-                                    <div
-                                        style={{
-                                            display: "flex",
-                                            justifyContent: "space-between",
-                                            alignItems: "center",
-                                            flexWrap: "wrap",
-                                            gap: 6,
-                                            marginBottom: 6,
-                                        }}
-                                    >
-                                        <span
-                                            style={{
-                                                fontWeight: 700,
-                                                fontSize: 14,
-                                            }}
-                                        >
-                                            {c.condition}
-                                        </span>
-                                        <div
-                                            style={{ display: "flex", gap: 5 }}
-                                        >
-                                            <span
-                                                style={{
-                                                    fontSize: 10,
-                                                    fontWeight: 600,
-                                                    background: "#F6F4EF",
-                                                    border: "1px solid #D3D1C7",
-                                                    color: "#5F5E5A",
-                                                    padding: "2px 8px",
-                                                    borderRadius: 4,
-                                                }}
-                                            >
-                                                {c.category}
-                                            </span>
-                                            <span
-                                                style={{
-                                                    fontSize: 10,
-                                                    fontWeight: 600,
-                                                    background: condSev.bg,
-                                                    color: condSev.color,
-                                                    border: `1px solid ${condSev.border}`,
-                                                    padding: "2px 8px",
-                                                    borderRadius: 4,
-                                                }}
-                                            >
-                                                {condSev.label}
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <p
-                                        style={{
-                                            fontSize: 13,
-                                            color: "#555",
-                                            margin: 0,
-                                            lineHeight: 1.55,
-                                        }}
-                                    >
-                                        {c.description}
-                                    </p>
-                                </div>
-                            );
-                        })}
+                    >    
                         <span
                             style={{
                                 background: sev.bg,
@@ -215,18 +179,6 @@ export default function DiagnosisResult() {
                             {sev.label}
                         </span>
                     </div>
-
-                    {/* Description */}
-                    <p
-                        style={{
-                            fontSize: 14,
-                            color: "#444",
-                            lineHeight: 1.7,
-                            marginBottom: 20,
-                        }}
-                    >
-                        {current.description}
-                    </p>
 
                     {/* Symptoms */}
                     {current.symptoms?.length > 0 && (
