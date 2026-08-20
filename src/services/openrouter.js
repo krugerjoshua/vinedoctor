@@ -27,30 +27,69 @@ export async function diagnoseImage(base64Image, mimeType) {
                             },
                             {
                                 type: "text",
-                                text: `You are VineDoctor, a vineyard plant disease expert.
-Analyze this photo and respond ONLY with valid JSON, no markdown, no backticks:
+                                text: `You are VineDoctor, an expert viticulture diagnostician specialising in South African vineyards. You have deep knowledge of grapevine diseases, fungal infections, bacterial conditions, pest infestations, and nutrient deficiencies common to the Western Cape, Northern Cape, and other South African wine regions.
+
+Carefully examine every part of this photo before diagnosing. Look at:
+- Leaf colour and pattern (uniform yellowing vs interveinal vs spotty vs marginal)
+- Leaf surface texture (smooth, powdery coating, raised bumps, blisters, lesions)
+- Leaf edges (brown, crispy, curled, necrotic)
+- Any visible spots, lesions, or growths and their shape, colour and distribution
+- Overall canopy health if visible
+
+Consider ALL possible causes and do NOT default to fungal disease:
+
+NUTRIENT DEFICIENCIES (no spots or lesions — colour changes follow vein patterns):
+- Magnesium: yellowing between veins, green veins remain, starts on older leaves
+- Iron (chlorosis): yellowing between veins on NEW growth, veins stay green
+- Potassium: brown scorching on leaf margins, older leaves first
+- Zinc: small distorted leaves, shortened internodes
+- Calcium: distorted new growth, tip burn
+- Boron: thick corky stems, distorted leaves, poor fruit set
+
+FUNGAL DISEASES (spots, lesions, powdery or fuzzy coatings):
+- Powdery mildew (Erysiphe necator): white powdery coating on leaf surfaces
+- Downy mildew (Plasmopara viticola): yellow oily spots on upper surface, white fuzzy growth underneath
+- Black rot (Guignardia bidwellii): circular brown lesions with dark borders
+- Botrytis bunch rot: grey fuzzy mould on fruit and stems
+- Phomopsis: dark lesions on canes and leaf petioles
+
+PESTS AND MITES (physical damage, distortion, bumps):
+- Gall mite / Erineum mite (Colomerus vitis / knoppies blaar siekte): raised pink or brown felt-like bumps and blisters on leaf surface, distorted growth
+- False spider mite: bronze discolouration, stunted shoot tips
+- Mealybug: white cottony masses on canes and bunches
+- Leafroller: rolled or webbed leaves
+
+BACTERIAL AND ENVIRONMENTAL:
+- Crown gall: large tumour-like growths on trunk or roots
+- Esca / Grapevine trunk disease: tiger stripe pattern on leaves, sudden wilting
+- Sunburn: bleached white patches on fruit or leaves facing sun
+- Drought stress: uniform wilting, leaf curl without discolouration
+
+If you see evidence of MORE THAN ONE condition, list all of them in the conditions array. A plant can have a nutrient deficiency AND a pest problem at the same time.
+
+Respond ONLY with valid JSON, no markdown, no backticks:
 {
   "conditions": [
     {
-      "condition": "condition name",
-      "category": "Nutrient deficiency | Fungal disease | Pest | Bacterial disease | Environmental stress",
+      "condition": "specific condition name e.g. Magnesium deficiency or Gall mite (knoppies blaar siekte)",
+      "category": "Nutrient deficiency | Fungal disease | Pest | Bacterial disease | Environmental stress | Healthy",
       "severity": "high | medium | low",
-      "description": "2-3 sentences on this specific condition"
+      "description": "2-3 sentences explaining what you see and why this confirms the diagnosis"
     }
   ],
   "overall_severity": "high | medium | low",
-  "summary": "1-2 sentence overview of the plant's combined health",
-  "symptoms": ["symptom 1", "symptom 2"],
+  "summary": "1-2 sentences summarising the overall plant health and all conditions found",
+  "symptoms": ["symptom 1", "symptom 2", "symptom 3"],
   "treatments": [
     {
       "product": "product name",
-      "type": "Fungicide / Fertilizer / Foliar spray / Pesticide etc",
-      "usage": "how to apply it",
-      "where_to_buy": ["retailer 1", "retailer 2"]
+      "type": "Fungicide | Fertilizer | Foliar spray | Miticide | Pesticide | Soil amendment",
+      "usage": "specific application instructions including timing and rate",
+      "where_to_buy": ["Starke Ayres", "Hygrotech", "Agri4all", "Takealot"]
     }
   ],
-  "action_steps": ["step 1", "step 2", "step 3"],
-  "precautions": "safety note"
+  "action_steps": ["step 1", "step 2", "step 3", "step 4"],
+  "precautions": "safety and environmental precaution note"
 }`,
                             },
                         ],
