@@ -31,7 +31,7 @@ export async function diagnoseImage(base64Image, mimeType) {
 
 Carefully examine every part of this photo before diagnosing. Look at:
 - Leaf colour and pattern (uniform yellowing vs interveinal vs spotty vs marginal)
-- Leaf surface texture (smooth, powdery coating, raised bumps, blisters, lesions)
+- Leaf surface texture (smooth, powdery coating, raised bumps, blisters, lesions) — run through this mentally: is the surface completely smooth or are there any raised areas, puckering or blistering even if subtle?
 - Leaf edges (brown, crispy, curled, necrotic)
 - Any visible spots, lesions, or growths and their shape, colour and distribution
 - Overall canopy health if visible
@@ -54,7 +54,7 @@ FUNGAL DISEASES (spots, lesions, powdery or fuzzy coatings):
 - Phomopsis: dark lesions on canes and leaf petioles
 
 PESTS AND MITES (physical damage, distortion, bumps):
-- Gall mite / Erineum mite (Colomerus vitis / knoppies blaar siekte): raised pink or brown felt-like bumps and blisters on leaf surface, distorted growth
+- Gall mite / Erineum mite (Colomerus vitis / knoppies blaar siekte): raised pink or brown felt-like bumps and blisters on leaf surface, distorted growth. THIS IS VERY COMMON IN SOUTH AFRICAN VINEYARDS. Even if bumps are subtle, if the leaf surface looks uneven or textured rather than smooth, consider gall mite as a co-occurring condition alongside any deficiency.
 - False spider mite: bronze discolouration, stunted shoot tips
 - Mealybug: white cottony masses on canes and bunches
 - Leafroller: rolled or webbed leaves
