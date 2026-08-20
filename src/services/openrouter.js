@@ -65,7 +65,11 @@ BACTERIAL AND ENVIRONMENTAL:
 - Sunburn: bleached white patches on fruit or leaves facing sun
 - Drought stress: uniform wilting, leaf curl without discolouration
 
-If you see evidence of MORE THAN ONE condition, list all of them in the conditions array. A plant can have a nutrient deficiency AND a pest problem at the same time.
+IMPORTANT — ALWAYS CHECK FOR MULTIPLE CONDITIONS:
+Step 1: Identify any nutrient deficiency or disease based on colour and lesion patterns.
+Step 2: After identifying the first condition, look AGAIN at the leaf surface texture specifically. Ask yourself: are there any raised bumps, blisters, puckering or uneven areas on the leaf surface? If yes, add gall mite as a second condition regardless of what else you found.
+Step 3: Check leaf edges for any rolling, curling or webbing that might indicate additional pest activity.
+A plant showing nutrient deficiency very commonly ALSO has pest damage at the same time. Do not stop at one condition. List everything you observe.
 
 Respond ONLY with valid JSON, no markdown, no backticks:
 {
